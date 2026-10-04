@@ -464,10 +464,10 @@ h2.title { font-size: clamp(2.1rem, 4.4vw, 3.2rem); letter-spacing: -0.02em; }
 .promises li:nth-child(1) { --face: #ffd9da; --lip: #f2aeb0; }
 .promises li:nth-child(2) { --face: #c9f2e7; --lip: #93dcc8; }
 .promises li:nth-child(3) { --face: #d5e5ff; --lip: #a7c6fb; }
-.grownup-note { display: flex; gap: 16px; align-items: flex-start; margin-top: 18px; padding: 20px 24px; border-radius: var(--radius); background: var(--cream); border: 2px dashed var(--line); }
-.grownup-note .lock { font-size: 1.6rem; line-height: 1; }
-.grownup-note h3 { font-size: 1.15rem; margin-bottom: 4px; }
-.grownup-note p { margin: 0; color: var(--muted); }
+.lock-note { display: flex; gap: 16px; align-items: flex-start; margin-top: 18px; padding: 20px 24px; border-radius: var(--radius); background: var(--cream); border: 2px dashed var(--line); }
+.lock-note .lock { font-size: 1.6rem; line-height: 1; }
+.lock-note h3 { font-size: 1.15rem; margin-bottom: 4px; }
+.lock-note p { margin: 0; color: var(--muted); }
 
 /* ---------- Privacy pillars ---------- */
 .pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
@@ -631,7 +631,7 @@ h2.title { font-size: clamp(2.1rem, 4.4vw, 3.2rem); letter-spacing: -0.02em; }
   .stat { padding: 18px 16px; }
   .keys { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-links { gap: 18px; }
-  .grownup-note { padding: 18px; }
+  .lock-note { padding: 18px; }
   .button-box { width: 80%; padding: 12px 12px 10px; gap: 6px; }
   .arcade { font-size: 0.58rem; letter-spacing: 0; }
 }

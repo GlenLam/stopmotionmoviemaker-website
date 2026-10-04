@@ -4,14 +4,14 @@ Marketing and support site for Stop Motion Movie Maker, the iPhone and iPad app 
 
 ## About Stop Motion Movie Maker
 
-A stop-motion movie studio inspired by children's-museum puppet stations: simple enough for an 8-year-old, deep enough for a grown-up who wants to go all out.
+A stop-motion movie studio inspired by children's-museum puppet stations: simple enough for an 8-year-old, deep enough for anyone who wants to go all out.
 
 - **Capture.** Five big buttons (Snap, Oops, Play, Ghost, Done), a ghost of the last picture (onion skin), and a camera that locks focus, exposure and white balance after the first picture so frames don't flicker. Speeds: 🐢 6, 🐇 12, 🚀 24 pictures a second. Done, pressed twice, saves the movie to Photos and starts a new one.
 - **Auto Snap.** Takes the picture once everything holds still and no hand is in the picture (Vision, on the device). Never takes the same picture twice.
-- **Decorate.** Words and speech bubbles, stickers (Pro), 54 sound effects, 9 songs, voice-over, My Songs (Files, the Music app, Share and AirDrop), 11 color looks, an opening title, and "The End" or rolling credits.
+- **Decorate.** Words and speech bubbles, 54 sound effects, an opening title, and "The End" or rolling credits. With Pro: stickers, 9 songs and My Songs (Files, the Music app, Share and AirDrop), voice-over, 11 color looks, and video clips.
 - **Big screen and buttons.** A TV or monitor over HDMI or AirPlay shows the stage while the phone is the remote. Keyboards, button boxes (F13–F17), foot pedals, game controllers including the Xbox Adaptive Controller, camera remotes, volume buttons, Camera Control and AirPods. Museum mode plus Guided Access for unattended stations.
 - **Studio mode.** Manual camera, time-lapse, shooting on twos, frame editor, timeline, keyframes, transitions, video import, 4K/HEVC export and project backups.
-- **Stop Motion Pro.** One-time purchase: 1080p HD and 4K, no "Made with Stop Motion Movie Maker" badge, stickers, adding photos, animated GIFs. Free movies save at 720p with the badge.
+- **Stop Motion Pro.** One-time purchase: 1080p HD and 4K, no "Made with Stop Motion Movie Maker" badge, music, voice-overs, stickers, looks, video clips, adding photos, animated GIFs. Free movies save at 720p with the badge.
 - **Privacy.** No account, ads, analytics, tracking or third-party code; the app makes no network connections of its own. The full picture is in `privacy.html`.
 
 Requires iOS 26 or iPadOS 26 or later. Made by CaLa Studios LLC. Questions go to support@calastudios.app.
