@@ -110,7 +110,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 68px; }
 .nav-brand { padding: 6px 0; }
 .nav-links { display: flex; align-items: center; gap: 26px; }
-.nav-links a { color: var(--muted); font-weight: 800; font-size: 1rem; transition: color 0.15s ease; }
+.nav-links a { color: var(--muted); font-weight: 800; font-size: 1rem; white-space: nowrap; transition: color 0.15s ease; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--grape); }
 .nav-cta { display: inline-flex; align-items: center; gap: 8px; }
 .nav-toggle { display: none; width: 44px; height: 44px; border-radius: 12px; align-items: center; justify-content: center; }
@@ -552,6 +552,44 @@ h2.title { font-size: clamp(2.1rem, 4.4vw, 3.2rem); letter-spacing: -0.02em; }
 .faq-group + .faq-group h2 { margin-top: 36px; }
 .faq-group h2 { font-size: 1.45rem; margin-bottom: 14px; }
 
+/* Guide: how to make a stop-motion movie. Steps put their picture beside the words, or below for wide ones */
+.breadcrumbs { padding-top: 24px; font-size: 0.92rem; font-weight: 800; color: var(--muted); }
+.breadcrumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.breadcrumbs li + li::before { content: "›"; margin-right: 6px; }
+.breadcrumbs a:hover { color: var(--grape); }
+.breadcrumbs + .doc-hero { padding-top: clamp(20px, 3vw, 36px); }
+.guide .doc-hero .lede { max-width: 46rem; }
+.guide .doc-hero .lede a { color: var(--grape); font-weight: 800; }
+.guide .doc-meta { display: block; font-size: 0.95rem; }
+.guide .doc { max-width: 54rem; }
+.guide .doc td:first-child { white-space: nowrap; }
+.guide-glance { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; max-width: 54rem; margin: 6px 0 0; }
+.guide-glance div { background: #fff; border-radius: var(--radius-sm); box-shadow: var(--sticker); padding: 14px 16px; }
+.guide-glance dt { font-size: 0.78rem; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grape); }
+.guide-glance dd { margin: 2px 0 0; font-weight: 800; color: var(--ink); line-height: 1.35; }
+.guide-step { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 32px; align-items: start; margin-top: 44px; scroll-margin-top: 90px; }
+.guide-step--text, .guide-step--wide { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+.guide-step h3 { display: flex; align-items: center; gap: 12px; font-size: 1.45rem; margin: 0 0 0.6em; }
+.guide-num { flex: none; width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--sunny); box-shadow: 0 4px 0 var(--sunny-lip); color: var(--ink); font-size: 1.15rem; }
+.guide-copy > :last-child { margin-bottom: 0; }
+.guide-figure { margin: 0; }
+.guide-step--wide .guide-figure { max-width: 720px; }
+.guide-figure img { width: 100%; height: auto; border-radius: 22px; box-shadow: var(--sticker); }
+.guide-figure--phone img { border-radius: 30px; border: 6px solid #15142a; box-shadow: var(--lift); }
+.guide-figure figcaption { margin-top: 12px; font-size: 0.9rem; font-weight: 700; line-height: 1.4; color: var(--muted); }
+.guide-tip { background: #fff; border-radius: 18px; box-shadow: var(--sticker); border-left: 6px solid var(--sunny); padding: 14px 18px; }
+.doc .guide-tip::before { content: "Tip: "; font-weight: 900; color: var(--ink); }
+.doc .guide-cards { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 18px 0 22px; }
+.doc .guide-cards li { background: #fff; border-radius: 20px; box-shadow: var(--sticker); padding: 18px 20px; margin: 0; }
+.doc .guide-cards h3 { margin: 0 0 6px; font-size: 1.12rem; }
+.doc .guide-cards p { margin: 0; color: var(--muted); }
+.doc .guide-cards--ideas { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.guide-cards--ideas li > span { display: block; font-size: 1.8rem; line-height: 1; margin-bottom: 10px; }
+.guide .faq { margin-top: 18px; }
+.guide .faq summary { font-size: 1.04rem; }
+.guide-more { margin-top: 32px; }
+.section--night .link-arrow { color: var(--sunny); }
+
 /* Embedded in an iframe: hide the chrome, keep the document */
 .embedded .site-header, .embedded .site-footer, .embedded .filmstrip { display: none; }
 .embedded .doc-hero { padding-top: 8px; }
@@ -572,9 +610,6 @@ h2.title { font-size: clamp(2.1rem, 4.4vw, 3.2rem); letter-spacing: -0.02em; }
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 1040px) {
-  .nav-links { gap: 20px; }
-}
 @media (max-width: 960px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-visual { max-width: 440px; margin-top: 8px; }
@@ -591,8 +626,10 @@ h2.title { font-size: clamp(2.1rem, 4.4vw, 3.2rem); letter-spacing: -0.02em; }
   .pillars { grid-template-columns: 1fr; }
   .support-grid { grid-template-columns: 1fr; }
   .contact-card { position: static; }
+  .doc .guide-cards--ideas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-@media (max-width: 900px) {
+/* Six nav links need about 1040px; below that they fold into the menu */
+@media (max-width: 1060px) {
   .nav-links {
     display: none; position: absolute; left: 0; right: 0; top: 68px; flex-direction: column; align-items: stretch; gap: 0;
     background: rgba(255, 248, 231, 0.98); border-bottom: 1px solid var(--line-soft); padding: 8px 0 12px;
@@ -603,6 +640,10 @@ h2.title { font-size: clamp(2.1rem, 4.4vw, 3.2rem); letter-spacing: -0.02em; }
 }
 @media (max-width: 720px) {
   .plans { grid-template-columns: 1fr; }
+  .guide-glance { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .guide-step { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .guide-figure--phone, .guide-figure--poster { max-width: 260px; }
+  .doc .guide-cards, .doc .guide-cards--ideas { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 640px) {
   body { font-size: 1rem; }

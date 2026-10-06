@@ -21,6 +21,7 @@ Requires iOS 26 or iPadOS 26 or later. Made by CaLa Studios LLC. Questions go to
 | Path | File | Purpose |
 | --- | --- | --- |
 | `/` | `index.html` | Landing page |
+| `/how-to-make-a-stop-motion-movie` | `how-to-make-a-stop-motion-movie.html` | Step-by-step guide, written for search (see below) |
 | `/support` | `support.html` | FAQ and contact; the App Store listing's Support URL |
 | `/privacy` | `privacy.html` | Privacy policy; the App Store listing's Privacy Policy URL, and the address for `AppLinks.privacyPolicy` in the app |
 | `/404` | `404.html` | Not-found page |
@@ -47,6 +48,12 @@ Edit the HTML, commit to `main`, push. Pages redeploys in about a minute.
 Feature copy follows the build that is live in the App Store, not what is in development. The counts on the landing page (54 sound effects, 9 songs, 11 looks) come from the app's `Resources/sounds.json` and the `Look` enum in `Model/Timeline.swift`; update them when those change. The privacy policy describes an app that collects nothing and makes no network connections, asks for the camera, the microphone (voice-over only), add-only Photos and Media & Apple Music (adding a song from the Music app), and imports through the system photo and file pickers; change the policy and its effective date before a change to any of that ships.
 
 To regenerate images: everything comes from the v1.0 App Store set, so the site shows what the listing shows. The `shot-*` files are the listing's 6.5″ iPhone screenshots (1242×2688), resized to 720 wide. The `screen-*` files and the two stage crops come from the raw sources behind them (`source/app-screens/` and `source/photos/toy-set.png` in the App Store working folder): 1320×2868 screens resized to 600 wide, and 16:9 crops at 800×450 (`autosnap-hand.webp` is the stage of `autosnap.png`, x 36–1284, y 648–1350). All are encoded with `cwebp -q 82`. When the screenshots change, swap the `shot-*` files and their alt text together. `og-image.jpg` is a 1200×630 HTML composition (site.css, the icon, the headline and the two `screen-*` phones) rendered with headless Chrome.
+
+### The how-to guide and search
+
+`how-to-make-a-stop-motion-movie.html` is the page meant to bring in search traffic: "how to make a stop motion movie", "stop motion on iPhone", "stop motion ideas for kids", "why does my stop motion flicker" and the like. Its title, description, H1 and URL carry the main phrase; the eight steps, the frame-rate table, tips, ideas and FAQ answer the related questions directly. Its JSON-LD has `BreadcrumbList`, `Article`, `HowTo` and `FAQPage`; the `HowTo` steps and the FAQ answers repeat the visible text, so **change both together**, and bump `dateModified`, the visible "Updated" date and its `sitemap.xml` `lastmod` when the content changes. Every page links to it from the nav ("How to") and footer, and the home page's How it works and Support's first-movie answer link to it in context. App facts in it (speeds, buttons, Auto Snap, Pro) follow the same rule as the rest of the site: the live build.
+
+Search Console (Google) and Bing Webmaster Tools should both have `https://stopmotionmoviemaker.com/sitemap.xml` submitted, and a new page can be sent for indexing from Search Console's URL Inspection.
 
 ### App Store
 
