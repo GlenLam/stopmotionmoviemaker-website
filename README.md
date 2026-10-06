@@ -33,7 +33,7 @@ GitHub Pages serves `support.html` at `/support` (and `/support.html`), so the e
 
 - `assets/css/site.css` – the one stylesheet, shared by every page. Light only, like the app's kid screens. Colors are the hex values from the app's `Theme.swift`: Cream `#FFF8E7` canvas, Ink `#2B2350` text, Night `#1B1A3A` bands, and the seven candy colors with one job each (Grass Snap, Tomato Oops, Sky Play, Grape Ghost, Sunny Done, Bubblegum Edit, Tangerine). Grape is the only candy color used for text (5.3:1 on cream). Buttons are drawn as the app's candy buttons, on a lip that is the app's `shaded(-0.3)` of their color.
 - `assets/js/site.js` – mobile nav, scroll reveal, footer year. No dependencies.
-- `assets/img/` – app icon sizes (`icon-*`, from the app's `AppIcon.png`), raw device screens (`screen-*.webp`), two crops of the camera stage (`stage.webp`, clean; `autosnap-hand.webp`, with Auto Snap waiting for a hand), Apple's App Store badge (for launch, see below) and `og-image.jpg` for link previews.
+- `assets/img/` – app icon sizes (`icon-*`, from the app's `AppIcon.png`), raw device screens (`screen-*.webp`), two crops of the camera stage (`stage.webp`, clean; `autosnap-hand.webp`, with Auto Snap waiting for a hand), Apple's App Store badge and `og-image.jpg` for link previews.
 - `assets/fonts/` – Nunito, subset to Latin with weights 500–900 as one variable WOFF2 (SIL OFL, license alongside). The font stack puts `ui-rounded` first, so Safari on Apple devices uses SF Pro Rounded, the app's own typeface, and only other browsers download Nunito.
 - The five button glyphs (camera, back arrow, play, dashed circle, check) are an inline SVG sprite at the top of `index.html`, drawn after the app's SF Symbols. The "come alive!" sticker and the free-movie badge follow `Watermark.swift`: rainbow letters on a navy face over a rainbow lip, tilted 3°.
 - `sitemap.xml`, `robots.txt`, `site.webmanifest` – the usual metadata.
@@ -48,13 +48,6 @@ Feature copy follows the build that is live in the App Store, not what is in dev
 
 To regenerate images: the screens come from the Simulator, which uses the app's simulated camera, with the debug launch arguments from the app's README, for example `xcrun simctl launch booted app.calastudios.stopmotion-camera -ResetLibrary YES -SeedProject demo -OpenScreen capture` (then `-OpenScreen editor`, `-Autopilot credits`, `-OpenTool titles`, `-OpenTool music -SeedSongs YES`, `-Autopilot autosnap`). They are iPhone 17 Pro Max screenshots (1320×2868) resized to 600 wide and encoded with `cwebp -q 82`. `og-image.jpg` is a 1200×630 HTML composition rendered with headless Chrome.
 
-### When the App Store listing goes live
+### App Store
 
-1. Replace each `<span class="store-soon" data-store>…</span>` (two in `index.html`) with the official badge:
-   ```html
-   <a class="badge-link" href="https://apps.apple.com/app/idAPP_ID"><img src="/assets/img/app-store-badge.svg" alt="Download on the App Store" width="162" height="54"></a>
-   ```
-2. Point every "Get the app" button (`href="#download"` / `href="/#download"`) at the same App Store URL, and change the CTA's "coming soon" line.
-3. Add `<meta name="apple-itunes-app" content="app-id=APP_ID">` to `index.html` for Safari's Smart App Banner, and `downloadUrl`, `installUrl` and `offers` to its JSON-LD.
-4. Add an "App Store" link to each page's footer.
-5. Swap the raw device screens for the App Store screenshots once they exist, if they tell the story better.
+The app went live on October 6, 2026: https://apps.apple.com/us/app/stop-motion-movie-maker/id6815898667 (app ID `6815898667`, free with Stop Motion Pro as an in-app purchase). That URL is behind both App Store badges and the "Get the app" button on every page, and in each page's footer; `index.html` also carries it in the Smart App Banner (`apple-itunes-app`) and its JSON-LD. If the listing's URL changes, update it everywhere at once.

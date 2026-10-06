@@ -141,13 +141,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .btn svg { width: 18px; height: 18px; flex: none; }
 @media (prefers-reduced-motion: reduce) { .btn, .btn:active { transition: none; transform: none; } }
 
-/* App Store. Until the listing is live the badge is a "coming soon" label: Apple's official badge may only
-   link to the app itself. It is drawn like the movie badge: a navy face on a rainbow lip. See the README. */
-.store-soon { display: inline-block; padding-bottom: 6px; border-radius: 16px; background: var(--rainbow); line-height: 1.1; }
-.store-soon > span { display: inline-flex; align-items: center; gap: 12px; height: 56px; padding: 0 22px 0 16px; border-radius: 16px; background: var(--badge-face); color: #fff; }
-.store-soon svg { width: 22px; height: 22px; color: var(--sunny); flex: none; }
-.store-soon small { display: block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 248, 231, 0.75); }
-.store-soon strong { display: block; font-weight: 900; font-size: 1.14rem; }
+/* App Store: Apple's official badge, linking to the listing */
 .badge-link { display: inline-block; line-height: 0; border-radius: 8px; transition: transform 0.15s ease, opacity 0.15s ease; }
 .badge-link img { height: 54px; width: auto; }
 .badge-link:hover { transform: translateY(-1px); opacity: 0.94; }
@@ -639,6 +633,5 @@ h2.title { font-size: clamp(2.1rem, 4.4vw, 3.2rem); letter-spacing: -0.02em; }
   .logo-name { font-size: 0.92rem; }
   .logo-icon { width: 32px; height: 32px; }
   .stats { grid-template-columns: 1fr; }
-  .store-soon strong { font-size: 1rem; }
   .arcade { font-size: 0.52rem; }
 }
