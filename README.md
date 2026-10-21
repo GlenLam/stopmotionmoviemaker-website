@@ -14,7 +14,7 @@ A stop-motion movie studio inspired by children's-museum puppet stations: simple
 - **Stop Motion Pro.** One-time purchase: 1080p HD and 4K, no "Made with Stop Motion Movie Maker" badge, music, voice-overs, stickers, looks, video clips, adding photos, animated GIFs. Free movies save at 720p with the badge.
 - **Privacy.** No account, ads, analytics, tracking or third-party code; the app makes no network connections of its own. The full picture is in `privacy.html`.
 
-Requires iOS 26 or iPadOS 26 or later. Made by CaLa Studios LLC. Questions go to support@calastudios.app.
+Requires iOS 18 or iPadOS 18 or later. Made by CaLa Studios LLC. Questions go to support@calastudios.app.
 
 ## Pages
 
@@ -22,6 +22,9 @@ Requires iOS 26 or iPadOS 26 or later. Made by CaLa Studios LLC. Questions go to
 | --- | --- | --- |
 | `/` | `index.html` | Landing page |
 | `/how-to-make-a-stop-motion-movie` | `how-to-make-a-stop-motion-movie.html` | Step-by-step guide, written for search (see below) |
+| `/stop-motion-on-ipad` | `stop-motion-on-ipad.html` | The guide for iPad: stand, back camera, snapping without touching it, the TV |
+| `/stop-motion-on-mac` | `stop-motion-on-mac.html` | The guide for a Mac: picking and aiming a camera, the space bar, the Stage Window |
+| `/stop-motion-with-continuity-camera` | `stop-motion-with-continuity-camera.html` | Using an iPhone as the Mac's camera: requirements, mounting, video effects to turn off |
 | `/support` | `support.html` | FAQ and contact; the App Store listing's Support URL |
 | `/privacy` | `privacy.html` | Privacy policy; the App Store listing's Privacy Policy URL, and the address for `AppLinks.privacyPolicy` in the app |
 | `/404` | `404.html` | Not-found page |
@@ -43,7 +46,7 @@ GitHub Pages serves `support.html` at `/support` (and `/support.html`), so the e
 
 ## Updating
 
-Edit the HTML, commit to `main`, push. Pages redeploys in about a minute. Pages tells browsers to keep files for 10 minutes, so every page links the stylesheet as `site.css?v=YYYYMMDD`: **when `site.css` changes, bump that date on all five pages** (add a letter for a second change the same day), or visitors can get new HTML with the old styles.
+Edit the HTML, commit to `main`, push. Pages redeploys in about a minute. Pages tells browsers to keep files for 10 minutes, so every page links the stylesheet as `site.css?v=YYYYMMDD`: **when `site.css` changes, bump that date on every page** (add a letter for a second change the same day), or visitors can get new HTML with the old styles.
 
 Feature copy follows the build that is live in the App Store, not what is in development. The counts on the landing page (54 sound effects, 9 songs, 11 looks) come from the app's `Resources/sounds.json` and the `Look` enum in `Model/Timeline.swift`; update them when those change. The privacy policy describes an app that collects nothing and makes no network connections, asks for the camera, the microphone (voice-over only), add-only Photos and Media & Apple Music (adding a song from the Music app), and imports through the system photo and file pickers; change the policy and its effective date before a change to any of that ships.
 
@@ -52,6 +55,8 @@ To regenerate images: everything comes from the v1.0 App Store set, so the site 
 ### The how-to guide and search
 
 `how-to-make-a-stop-motion-movie.html` is the page meant to bring in search traffic: "how to make a stop motion movie", "stop motion on iPhone", "stop motion ideas for kids", "why does my stop motion flicker" and the like. Its title, description, H1 and URL carry the main phrase (keep every page's description under 160 characters, which Bing flags); the frame-rate table, six steps, tips, ideas and six questions answer the related ones directly, in under 800 words. Keep it short: each step is one card with at most one picture. Step numbers come from a CSS counter on the `<ol>`, so headings stay clean in search results and reader views. Its JSON-LD has `BreadcrumbList`, `Article`, `HowTo` and `FAQPage`; the `HowTo` steps and the FAQ answers repeat the visible text, so **change both together**, and bump `dateModified`, the visible "Updated" date and its `sitemap.xml` `lastmod` when the content changes. Every page links to it from the nav ("How to") and footer, and the home page's How it works and Support's first-movie answer link to it in context. App facts in it (speeds, buttons, Auto Snap, Pro) follow the same rule as the rest of the site: the live build.
+
+The iPad, Mac and Continuity Camera guides are built the same way, one page each with six steps, four tips and six questions, and they link to each other and from the main guide's last lines. They describe 1.1 (iPadOS 18, the Mac app, iCloud sync), so they go live with 1.1. When you publish them, set their `datePublished`, `dateModified`, `article:published_time`, `article:modified_time`, visible "Updated" date and `sitemap.xml` `lastmod` to that day. Their pictures: `ipad-capture.webp` and `ipad-editor.webp` are the v1.0 iPad 13″ screenshots 01 and 03 at 600×800; `mac-capture.webp`, `mac-autosnap.webp` and `mac-editor.webp` are the 1.1 Mac screens 01–03 (`StopMotion-v1.1_prep/Mac flat 2880x1800`) at 800×500, all `cwebp -q 82`. Continuity Camera can't have its exposure, white balance or focus locked by apps, so that guide leans on lamp light; keep that if the app ever changes.
 
 Search Console (Google) and Bing Webmaster Tools should both have `https://stopmotionmoviemaker.com/sitemap.xml` submitted, and a new page can be sent for indexing from Search Console's URL Inspection.
 
