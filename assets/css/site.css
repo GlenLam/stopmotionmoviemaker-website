@@ -595,6 +595,7 @@ h2.title { font-size: clamp(2.1rem, 4.4vw, 3.2rem); letter-spacing: -0.02em; }
 .guide-list p { margin: 0; color: var(--muted); }
 .doc .guide-list { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 14px; }
 .doc--hub > h2:first-child { margin-top: 0.5em; } /* the hub has no glance cards between the hero and its first heading */
+.doc--hub { padding-bottom: clamp(24px, 3vw, 36px); } /* a short listing page: no band-sized gap before the download card */
 .guide .faq { margin-top: 18px; }
 .guide .faq summary { font-size: 1.04rem; }
 .guide-more { margin-top: 32px; }
