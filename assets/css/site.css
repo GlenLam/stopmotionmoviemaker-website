@@ -585,6 +585,15 @@ h2.title { font-size: clamp(2.1rem, 4.4vw, 3.2rem); letter-spacing: -0.02em; }
 .doc .guide-cards h3 { margin: 0 0 4px; font-size: 1.08rem; }
 .doc .guide-cards p { margin: 0; color: var(--muted); }
 .doc .guide-cards--ideas { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+/* Guide lists: the home page's featured row (three cards on the night band) and the Guides hub. The whole card is the link. */
+.guide-list { list-style: none; padding: 0; margin: 36px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.guide-list li { position: relative; background: #fff; border-radius: 20px; box-shadow: var(--sticker); padding: 18px 20px; margin: 0; color: var(--ink); }
+.guide-list h3 { margin: 0 0 4px; font-size: 1.08rem; color: var(--ink); }
+.guide-list h3 a { color: inherit; text-decoration: none; }
+.guide-list h3 a::after { content: ""; position: absolute; inset: 0; }
+.guide-list li:hover h3 { color: var(--grape); }
+.guide-list p { margin: 0; color: var(--muted); }
+.doc .guide-list { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 14px; }
 .guide .faq { margin-top: 18px; }
 .guide .faq summary { font-size: 1.04rem; }
 .guide-more { margin-top: 32px; }
@@ -646,6 +655,7 @@ h2.title { font-size: clamp(2.1rem, 4.4vw, 3.2rem); letter-spacing: -0.02em; }
   .guide-figure--phone { width: 92px; }
   .guide-figure--phone img { border-radius: 14px; border-width: 3px; }
   .doc .guide-cards, .doc .guide-cards--ideas { grid-template-columns: minmax(0, 1fr); }
+  .guide-list, .doc .guide-list { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 640px) {
   body { font-size: 1rem; }
