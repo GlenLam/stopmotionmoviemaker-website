@@ -1,6 +1,6 @@
 # stopmotionmoviemaker.com
 
-Marketing and support site for Stop Motion Movie Maker, the iPhone and iPad app for making stop-motion movies with toys, puppets and clay. Static HTML with no build step and no third-party requests, served by GitHub Pages at **https://stopmotionmoviemaker.com**. The app itself lives in `stopmotion-camera` (Xcode project).
+Marketing and support site for Stop Motion Movie Maker, the iPhone, iPad and Mac app for making stop-motion movies with toys, puppets and clay. Static HTML with no build step and no third-party requests, served by GitHub Pages at **https://stopmotionmoviemaker.com**. The app itself lives in `stopmotion-camera` (Xcode project).
 
 ## About Stop Motion Movie Maker
 
@@ -64,4 +64,4 @@ Search Console (Google) and Bing Webmaster Tools should both have `https://stopm
 
 ### App Store
 
-The app went live on October 6, 2026: https://apps.apple.com/us/app/stop-motion-movie-maker/id6815898667 (app ID `6815898667`, free with Stop Motion Pro as an in-app purchase). That URL is behind both App Store badges and the "Get the app" button on every page, and in each page's footer; `index.html` also carries it in the Smart App Banner (`apple-itunes-app`) and its JSON-LD. If the listing's URL changes, update it everywhere at once.
+The app went live on October 6, 2026, and the Mac version on October 23, 2026, in the same listing: https://apps.apple.com/us/app/stop-motion-movie-maker/id6815898667 (app ID `6815898667`, free with Stop Motion Pro as an in-app purchase). That URL is behind both App Store badges and the "Get the app" button on every page, and in each page's footer; `index.html` also carries it in the Smart App Banner (`apple-itunes-app`) and its JSON-LD. If the listing's URL changes, update it everywhere at once.
